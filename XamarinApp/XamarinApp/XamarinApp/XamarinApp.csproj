@@ -14,12 +14,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="Models\" />
     <Folder Include="Common\" />
+    <Folder Include="Resource\" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="AppDemoPage.xaml.cs">
+      <DependentUpon>AppDemoPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AppDemoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\CatePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
