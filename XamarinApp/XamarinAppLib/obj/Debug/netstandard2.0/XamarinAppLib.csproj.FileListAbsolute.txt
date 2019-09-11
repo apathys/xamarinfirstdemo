@@ -1,0 +1,11 @@
+G:\lhsc\2017\xamarinfirstdemo\XamarinApp\XamarinAppLib\bin\Debug\netstandard2.0\XamarinAppLib.deps.json
+G:\lhsc\2017\xamarinfirstdemo\XamarinApp\XamarinAppLib\bin\Debug\netstandard2.0\XamarinAppLib.dll
+G:\lhsc\2017\xamarinfirstdemo\XamarinApp\XamarinAppLib\obj\Debug\netstandard2.0\XamarinAppLib.csproj.CoreCompileInputs.cache
+G:\lhsc\2017\xamarinfirstdemo\XamarinApp\XamarinAppLib\obj\Debug\netstandard2.0\XamarinAppLib.AssemblyInfoInputs.cache
+G:\lhsc\2017\xamarinfirstdemo\XamarinApp\XamarinAppLib\obj\Debug\netstandard2.0\XamarinAppLib.AssemblyInfo.cs
+G:\lhsc\2017\xamarinfirstdemo\XamarinApp\XamarinAppLib\bin\Debug\netstandard2.0\XamarinAppLib.pdb
+G:\lhsc\2017\xamarinfirstdemo\XamarinApp\XamarinAppLib\obj\Debug\netstandard2.0\MainAppPage.xaml.g.cs
+G:\lhsc\2017\xamarinfirstdemo\XamarinApp\XamarinAppLib\obj\Debug\netstandard2.0\XamarinAppLib.dll
+G:\lhsc\2017\xamarinfirstdemo\XamarinApp\XamarinAppLib\obj\Debug\netstandard2.0\XamarinAppLib.pdb
+G:\lhsc\2017\xamarinfirstdemo\XamarinApp\XamarinAppLib\obj\Debug\netstandard2.0\XamlC.stamp
+G:\lhsc\2017\xamarinfirstdemo\XamarinApp\XamarinAppLib\obj\Debug\netstandard2.0\XamarinAppLib.csprojAssemblyReference.cache

@@ -10,6 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
   </ItemGroup>
 
@@ -19,8 +22,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Apathys.CalouselViewLib\Apathys.CalouselViewLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AppDemo.xaml.cs">
+      <DependentUpon>AppDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Update="AppDemoPage.xaml.cs">
       <DependentUpon>AppDemoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="MainAppPage.xaml.cs">
+      <DependentUpon>MainAppPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 

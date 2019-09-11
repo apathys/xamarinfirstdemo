@@ -1,12 +1,147 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:XamarinApp.ViewModels"
+             xmlns:cards="clr-namespace:Apathys.CalouselViewLib;assembly=Apathys.CalouselViewLib"
+             xmlns:controls="clr-namespace:Apathys.CalouselViewLib.Controls;assembly=Apathys.CalouselViewLib"
+             xmlns:proc="clr-namespace:Apathys.CalouselViewLib.Processors;assembly=Apathys.CalouselViewLib"
+             xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
              x:Class="XamarinApp.Views.HomePage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms发大水发大水分都是!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <ContentPage.BindingContext>
+        <viewModels:HomeViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout Margin="5,5,5,0">
+        <cards:CarouselView 
+        x:Name="carousel"
+        ItemsSource="{Binding Items}"
+        SlideShowDuration="3500" 
+        HorizontalOptions="FillAndExpand"  
+        SelectedIndex="{Binding CurrentIndex}">
+
+        <x:Arguments>
+            <proc:BaseCarouselFrontViewProcessor ScaleFactor="0.5" OpacityFactor="0" />
+            <proc:BaseCarouselBackViewProcessor ScaleFactor="0.5" OpacityFactor="0" />
+        </x:Arguments>
+
+        <cards:CarouselView.ItemTemplate>
+            <DataTemplate>
+                <ContentView>
+                    <Frame  
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="150" 
+                        Padding="0" 
+                        HasShadow="false"
+                        IsClippedToBounds="true"
+                        CornerRadius="10">
+                            <ffimage:CachedImage Source="{Binding Source}" 
+                                                 DownsampleToViewSize="True"
+                                                 Aspect="AspectFill"/>
+
+                    </Frame>
+                </ContentView>
+            </DataTemplate>
+        </cards:CarouselView.ItemTemplate> 
+        <controls:IndicatorsControl ToFadeDuration="1500"/>
+        <controls:LeftArrowControl ToFadeDuration="2500"/>
+        <controls:RightArrowControl ToFadeDuration="2500"/>
+    </cards:CarouselView>
+
+        <Grid BackgroundColor="#f5f5f5"   >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75" />
+                <RowDefinition Height="75" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0" Grid.Column="0" >
+                <Image x:Name="images"  Source="ic_main_kuaisu.png" HeightRequest="50"  HorizontalOptions="Center"></Image>
+                <Label Text="快速入门" HeightRequest="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </StackLayout>
+            <StackLayout Grid.Row="0" Grid.Column="1">
+                <Image   Source="ic_main_wh.png" HeightRequest="50" HorizontalOptions="Center"></Image>
+                <Label Text="企业文化" HeightRequest="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </StackLayout>
+            <StackLayout Grid.Row="0" Grid.Column="2" >
+                <Image  Source="ic_main_jineng.png" HeightRequest="50"  HorizontalOptions="Center"></Image>
+                <Label Text="职业技能" HeightRequest="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </StackLayout>
+            <StackLayout Grid.Row="0" Grid.Column="3">
+                <Image   Source="ic_main_xintai.png" HeightRequest="50" HorizontalOptions="Center"></Image>
+                <Label Text="心态辅导" HeightRequest="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="0" >
+                <Image    Source="ic_main_chanpin.png" HeightRequest="50"  HorizontalOptions="Center"></Image>
+                <Label Text="产品解析" HeightRequest="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="1">
+                <Image   Source="ic_main_geren.png" HeightRequest="50" HorizontalOptions="Center"></Image>
+                <Label Text="个人成长" HeightRequest="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="2" >
+                <Image   Source="ic_main_yingshi.png" HeightRequest="50"  HorizontalOptions="Center"></Image>
+                <Label Text="影视资料" HeightRequest="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="3">
+                <Image Source="ic_main_zaixian.png" HeightRequest="50" HorizontalOptions="Center"></Image>
+                <Label Text="在线客服" HeightRequest="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </StackLayout>
+        </Grid>
+
+        <Label Text="推荐课程" FontSize="Body" TextColor="Black"></Label>
+            <StackLayout HeightRequest="500" VerticalOptions="EndAndExpand" >
+                <ListView ItemsSource="{Binding MyItemsPushCourse}" 
+                       RowHeight="120" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">  
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" 
+                                         HorizontalOptions="Fill" Padding="0, 10, 0, 10">
+                                <Image Source="{Binding image}" ></Image>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding name}"></Label>
+                                    <Label Text="{Binding teacher_name}"></Label>
+                                    <Label Text="{Binding ytime}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell> 
+                    </DataTemplate>
+                </ListView.ItemTemplate> 
+            </ListView>
         </StackLayout>
-    </ContentPage.Content>
+
+            
+            <Label Text="最新推荐" FontSize="Body" TextColor="Black"></Label>
+            <ScrollView Orientation="Horizontal" WidthRequest="1000">
+            <StackLayout HeightRequest="140" Orientation="Horizontal">
+                <ListView ItemsSource="{Binding MyItemsPushCourse}"  
+                       RowHeight="120"  WidthRequest="1000" 
+                       HorizontalScrollBarVisibility="Never" 
+                       VerticalScrollBarVisibility="Never">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"  WidthRequest="200"
+                                         HorizontalOptions="Fill" Padding="0, 10, 0, 10">
+                                <Image Source="{Binding image}" ></Image>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding name}"></Label>
+                                    <Label Text="{Binding teacher_name}"></Label>
+                                    <Label Text="{Binding ytime}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            </ScrollView>
+
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

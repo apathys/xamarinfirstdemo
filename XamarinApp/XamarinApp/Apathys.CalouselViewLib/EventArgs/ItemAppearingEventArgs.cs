@@ -1,0 +1,23 @@
+﻿using Apathys.CalouselViewLib.Enums;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Apathys.CalouselViewLib.EventArgs
+{
+    public class ItemAppearingEventArgs : System.EventArgs
+    {
+        public ItemAppearingEventArgs(InteractionType type, bool isNextSelected, int index, object item)
+        {
+            Type = type;
+            IsNextSelected = isNextSelected;
+            Index = index;
+            Item = item;
+        }
+
+        public InteractionType Type { get; }
+        public bool IsNextSelected { get; }
+        public int Index { get; }
+        public object Item { get; }
+    }
+}

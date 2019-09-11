@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinApp.Views"
+             x:Class="XamarinApp.MainAppPage"
+             BackgroundColor="white"
+             BarBackgroundColor="#ffebcd">
+
+    <local:HomePage Title="home" IconImageSource="icon_home.png"></local:HomePage>
+    <local:CatePage Title="cate" IconImageSource="icon_msg.png"></local:CatePage>
+    <local:LookPage Title="buy" IconImageSource="icon_buy.png"></local:LookPage>
+    <local:MyPage Title="my" IconImageSource="icon_my.png"></local:MyPage>
+
+</TabbedPage>

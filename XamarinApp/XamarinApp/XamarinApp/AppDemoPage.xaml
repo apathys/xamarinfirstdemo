@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinApp.Views;assembly=XamarinApp"  
+             x:Class="XamarinApp.AppDemoPage">
+
+    <Grid ColumnSpacing="0" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="1"></RowDefinition>
+            <RowDefinition Height="44"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ContentView x:Name="placeholder" Grid.Row="0"></ContentView>
+        <BoxView BackgroundColor="#dcdcdc" Grid.Row="1"></BoxView>
+        <Grid ColumnSpacing="0" RowSpacing="0" Grid.Row="2"> 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+            <StackLayout Spacing="0" x:Name="home" Grid.Row="0" Grid.Column="0" BackgroundColor="AliceBlue">
+                <Image Source="icon_home.png" x:Name="home_img"  HeightRequest="25"></Image>
+                <Label Text="首页" x:Name="home_txt" HorizontalOptions="Center"></Label>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Home_Tapped"></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <StackLayout Spacing="0" x:Name="msg"  Grid.Row="0" Grid.Column="1" BackgroundColor="AliceBlue">
+                <Image Source="icon_msg.png" x:Name="msg_img" HeightRequest="25"></Image>
+                <Label Text="消息" x:Name="msg_txt" HorizontalOptions="Center"></Label>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Cate_Tapped"></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <StackLayout Spacing="0" x:Name="buy" Grid.Row="0" Grid.Column="2" BackgroundColor="AliceBlue">
+                <Image Source="icon_buy.png" x:Name="buy_img"  HeightRequest="25"></Image>
+                <Label Text="购物车" x:Name="buy_txt" HorizontalOptions="Center"></Label>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Study_Tapped"></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <StackLayout Spacing="0" x:Name="my" Grid.Row="0" Grid.Column="3" BackgroundColor="AliceBlue">
+                <Image Source="icon_my.png" x:Name="my_img"  HeightRequest="25"></Image>
+                <Label Text="我的" x:Name="my_txt" HorizontalOptions="Center"></Label>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="My_Tapped"></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+            </StackLayout> 
+        </Grid>
+    </Grid>
+</ContentPage>
